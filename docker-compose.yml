@@ -1,0 +1,49 @@
+version: '3.2'
+
+services:
+ api: 
+  image: mfon01/hng:backend
+  container_name: backend
+  command: python manage.py runserver 0.0.0.8000
+  ports:
+   - "8000:8000"
+   
+
+ frontend:
+  image: mfon01/hng:latest
+  container_name: frontend
+  ports:
+    - "3000:3000"
+  depends_on: 
+    - api
+  
+  
+
+   
+networks:
+ default:
+ name:
+ external:
+ 
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
